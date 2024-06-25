@@ -8,7 +8,7 @@ class Program
 
         bool endApp = false;
         // Display title as the C# console calculator app
-        Console.WriteLine("Console calculator in C#\r");
+        System.Console.WriteLine("Hi and Welcome to the Console calculator\r");
         Console.WriteLine("------------------------\n");
 
         while (!endApp)
@@ -20,6 +20,7 @@ class Program
             double result = 0;
 
             //Ask the user to type the first number
+            System.Console.WriteLine($"You have done {Counter.Count} calculations");
             Console.WriteLine("Type a number, and then press Enter: ");
             numInput1 = Console.ReadLine();
 
@@ -78,8 +79,13 @@ class Program
 
             // Wait for the user to respond before closing
             Console.WriteLine("Press 'n' and Enter to close the app or press any other key and Enter to continue");
-            if (Console.ReadLine() == "n") endApp = true;
+            if (Console.ReadLine() == "n") 
+            {
+                Counter.reset();
+                endApp = true;
+            }
 
+            Counter.increment();
             Console.WriteLine("\n"); // Friendly linespacing
         }
         return;
