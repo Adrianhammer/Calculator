@@ -8,6 +8,8 @@ class Program
     {
 
         bool endApp = false;
+        Calculator calculator = new Calculator();
+
         // Display title as the C# console calculator app
         System.Console.WriteLine("Hi and Welcome to the Console calculator\r");
         Console.WriteLine("------------------------\n");
@@ -61,7 +63,7 @@ class Program
             {
                 try
                 {
-                    result = Calculator.DoOperation(cleanNum1, cleanNum2, operation);
+                    result = calculator.DoOperation(cleanNum1, cleanNum2, operation);
                     if (double.IsNaN(result))
                     {
                         Console.WriteLine("This operation will result in a mathematical error.\n");
