@@ -1,0 +1,3 @@
+﻿Dagbok
+
+1.7.24 - la til logge funksjon ved bruk av json. Du kan hente ut loggen å få den displaya i terminal. Litt buggy enda - se på hvordan jeg kan få gjort det bedre. Forstå json og nuget koden bedre og les dokumentasjon. 
