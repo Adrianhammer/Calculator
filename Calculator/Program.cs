@@ -81,8 +81,13 @@ class Program
             Console.WriteLine("--------------------------------\n");
 
             // Wait for the user to respond before closing
-            Console.WriteLine("Press 'n' and Enter to close the app or press any other key and Enter to continue");
-            if (Console.ReadLine() == "n") 
+            Console.WriteLine(" Press 'l' and Enter to view the log \n press 'n' and Enter to close the app \n Press any other key and Enter to continue");
+            if (Console.ReadLine() == "l")
+            {
+                calculator.Finish();
+                calculatorLog.CalculatorLog.viewLog();
+            }
+            else if (Console.ReadLine() == "n")
             {
                 Counter.reset();
                 endApp = true;
@@ -91,6 +96,7 @@ class Program
             Counter.increment();
             Console.WriteLine("\n"); // Friendly linespacing
         }
+        calculator.Finish();
         return;
     }
 }
