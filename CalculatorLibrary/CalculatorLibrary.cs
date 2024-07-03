@@ -14,7 +14,7 @@ namespace CalculatorLibrary
             writer.Formatting = Formatting.Indented;
             writer.WriteStartObject();
             writer.WritePropertyName("operations");
-            writer.WriteStartArray();  
+            writer.WriteStartArray();
         }
 
         public double DoOperation(double num1, double num2, string operation)
@@ -26,7 +26,7 @@ namespace CalculatorLibrary
             writer.WriteValue(num1);
             writer.WritePropertyName("Operand2");
             writer.WriteValue(num2);
-            writer.WritePropertyName("Operation");
+            writer.WritePropertyName("OperationType");
 
             // Use a switch statement to do the math.
             switch (operation)
@@ -65,6 +65,12 @@ namespace CalculatorLibrary
             writer.WriteEndArray();
             writer.WriteEndObject();
             writer.Close();
+        }
+
+        public void Open()
+        {
+            
+            writer.WriteStartObject();
         }
     }
 }

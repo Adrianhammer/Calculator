@@ -79,24 +79,28 @@ class Program
                 }
             }
             Console.WriteLine("--------------------------------\n");
-
+            
             // Wait for the user to respond before closing
             Console.WriteLine(" Press 'l' and Enter to view the log \n press 'n' and Enter to close the app \n Press any other key and Enter to continue");
-            if (Console.ReadLine() == "l")
+            string? userInput = Console.ReadLine();
+            if (userInput == "l")
             {
                 calculator.Finish();
                 calculatorLog.CalculatorLog.viewLog();
             }
-            else if (Console.ReadLine() == "n")
+            else if (userInput == "n")
             {
                 Counter.reset();
                 endApp = true;
+                calculator.Finish();
             }
-
-            Counter.increment();
-            Console.WriteLine("\n"); // Friendly linespacing
+            else
+            {
+                Counter.increment();
+                Console.WriteLine("\n"); // Friendly linespacing
+            }
         }
-        calculator.Finish();
+        //calculator.Finish();
         return;
     }
 }
